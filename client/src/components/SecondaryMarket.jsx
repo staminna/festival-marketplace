@@ -47,11 +47,11 @@ class SecondaryMarket extends Component {
         if (forSale) {
           return (
             <tr key={ticketId}>
-              <td class="center">{festName}</td>
-              <td class="center">{ticketId}</td>
-              <td class="center">{web3.utils.fromWei(sellingPrice, 'ether')}</td>
+              <td className="center">{festName}</td>
+              <td className="center">{ticketId}</td>
+              <td className="center">{web3.utils.fromWei(sellingPrice, 'ether')}</td>
 
-              <td class="center"><button type="submit" className="custom-btn login-btn" onClick={this.onPurchaseTicket.bind(this, ticketId, sellingPrice, initiator)}>Buy</button></td>
+              <td className="center"><button type="submit" className="custom-btn login-btn" onClick={this.onPurchaseTicket.bind(this, ticketId, sellingPrice, initiator)}>Buy</button></td>
             </tr>
           );
         }
@@ -121,31 +121,31 @@ class SecondaryMarket extends Component {
 
   render() {
     return (
-      <div class="container center" >
-        <div class="row">
-          <div class="container ">
-            <div class="container ">
+      <div className="container center" >
+        <div className="row">
+          <div className="container ">
+            <div className="container ">
 
               <h5 style={{ padding: "30px 0px 0px 10px" }}>Secondary Marketplace</h5>
 
-              <label class="left">Festival</label>
+              <label className="left">Festival</label>
               <select className="browser-default" name='fest' value={this.state.fest || undefined} onChange={this.onFestivalChangeHandler}>
                 <option value="" disabled >Select Festival</option>
                 {this.state.fests}
               </select><br /><br />
 
-              <h4 class="center">Purchase Tickets</h4>
+              <h4 className="center">Purchase Tickets</h4>
 
-              <table id='requests' class="responsive-table striped" >
+              <table id='requests' className="responsive-table striped" >
                 <thead>
                   <tr>
-                    <th key='name' class="center">Fest Name</th>
-                    <th key='ticketId' class="center">Ticket Id</th>
-                    <th key='cost' class="center">Cost(in FEST)</th>
-                    <th key='purchase' class="center">Purchase</th>
+                    <th key='name' className="center">Fest Name</th>
+                    <th key='ticketId' className="center">Ticket Id</th>
+                    <th key='cost' className="center">Cost(in FEST)</th>
+                    <th key='purchase' className="center">Purchase</th>
                   </tr>
                 </thead>
-                <tbody class="striped highlight">
+                <tbody className="striped highlight">
                   {this.state.renderTickets}
                 </tbody>
               </table>

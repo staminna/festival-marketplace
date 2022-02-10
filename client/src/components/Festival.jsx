@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import festivalFactory from '../proxies/FestivalFactory';
 import festToken from '../proxies/FestToken';
 import FestivalNFT from '../proxies/FestivalNFT';
-import renderNotification from '../utils/notification-handler';
+// import renderNotification from '../utils/notification-handler';
 
 let web3;
 
@@ -27,7 +27,7 @@ class Festival extends Component {
 
       const organiser = await web3.eth.getCoinbase();
       const { name, symbol, price, supply } = this.state;
-      const { events: { Created: { returnValues: { ntfAddress, marketplaceAddress } } } } = await festivalFactory.methods.createNewFest(
+      const { events: { Created: { ntfAddress, marketplaceAddress } } } = await festivalFactory.methods.createNewFest(
         festToken._address,
         name,
         symbol,
@@ -35,7 +35,7 @@ class Festival extends Component {
         supply
       ).send({ from: organiser, gas: 6700000 });
 
-      renderNotification('success', 'Success', `Festival Created Successfully!`);
+      // renderNotification('success', 'Success', `Festival Created Successfully!`);
 
       const nftInstance = await FestivalNFT(ntfAddress);
       const batches = Math.ceil(supply / 30);
@@ -57,7 +57,7 @@ class Festival extends Component {
       }
     } catch (err) {
       console.log('Error while creating new festival', err);
-      renderNotification('danger', 'Error', `${err.message}`);
+      // renderNotification('danger', 'Error', `${err.message}`);
     }
   }
 
@@ -69,16 +69,16 @@ class Festival extends Component {
 
   render() {
     return (
-      <div class="container center" >
-        <div class="row">
-          <div class="container ">
-            <div class="container ">
+      <div className="container center" >
+        <div className="row">
+          <div className="container ">
+            <div className="container ">
               <h5 style={{ padding: "30px 0px 0px 10px" }}>Create new Festival</h5>
-              <form class="" onSubmit={this.onCreateFestival}>
-                <label class="left">Fest Name</label><input id="name" class="validate" placeholder="Fest Name" type="text" class="validate" name="name" onChange={this.inputChangedHandler} /><br /><br />
-                <label class="left">Fest Symbol</label><input id="symbol" class="validate" placeholder="Fest Symbol" type="text" className="input-control" name="symbol" onChange={this.inputChangedHandler} /><br /><br />
-                <label class="left">Ticket Price</label><input id="price" placeholder="Ticket Price" type="text" className="input-control" name="price" onChange={this.inputChangedHandler} /><br /><br />
-                <label class="left">Total Supply</label><input id="supply" placeholder="Total SUpply" type="text" className="input-control" name="supply" onChange={this.inputChangedHandler}></input><br /><br />
+              <form className="" onSubmit={this.onCreateFestival}>
+                <label className="left">Fest Name</label><input id="name" className="validate" placeholder="Fest Name" type="text" className="validate" name="name" onChange={this.inputChangedHandler} /><br /><br />
+                <label className="left">Fest Symbol</label><input id="symbol" className="validate" placeholder="Fest Symbol" type="text" className="input-control" name="symbol" onChange={this.inputChangedHandler} /><br /><br />
+                <label className="left">Ticket Price</label><input id="price" placeholder="Ticket Price" type="text" className="input-control" name="price" onChange={this.inputChangedHandler} /><br /><br />
+                <label className="left">Total Supply</label><input id="supply" placeholder="Total SUpply" type="text" className="input-control" name="supply" onChange={this.inputChangedHandler}></input><br /><br />
 
                 <button type="submit" className="custom-btn login-btn">Create Festival</button>
               </form>

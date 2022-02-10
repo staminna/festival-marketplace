@@ -1,9 +1,9 @@
-FROM node:alpine
+FROM node:16-alpine3.12
 
 WORKDIR /app
 
 RUN apk update && apk upgrade && apk add --no-cache bash git openssh
-RUN apk add --update python krb5 krb5-libs gcc make g++ krb5-dev
+RUN apk add --update python3 krb5 krb5-libs gcc make g++ krb5-dev
 
 RUN npm install -g ganache-cli
 

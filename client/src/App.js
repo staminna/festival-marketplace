@@ -46,9 +46,9 @@ class App extends Component {
         <div >
           <ReactNotification />
           <nav style={{ padding: '0px 30px 0px 30px' }}>
-            <div class="nav-wrapper" >
-              <a href="/buyTickets" class="brand-logo left">Festival Marketplace</a>
-              <ul class="right hide-on-med-and-down 10" >
+            <div className="nav-wrapper" >
+              <a href="/buyTickets" className="brand-logo left">Festival Marketplace</a>
+              <ul className="right hide-on-med-and-down 10" >
                 <div>
                   <li> <Link to="/createFestival">Add Festival</Link> </li>
                   <li> <Link to="/buyTickets">Buy Tickets</Link> </li>

@@ -35,11 +35,11 @@ class Purchase extends Component {
 
         return (
           <tr key={fest}>
-            <td class="center">{festName}</td>
-            <td class="center">{web3.utils.fromWei(ticketPrice, 'ether')}</td>
-            <td class="center">{totalSupply - saleId}</td>
+            <td className="center">{festName}</td>
+            <td className="center">{web3.utils.fromWei(ticketPrice, 'ether')}</td>
+            <td className="center">{totalSupply - saleId}</td>
 
-            <td class="center"><button type="submit" className="custom-btn login-btn" onClick={this.onPurchaseTicket.bind(this, marketplace, ticketPrice, initiator)}>Buy</button></td>
+            <td className="center"><button type="submit" className="custom-btn login-btn" onClick={this.onPurchaseTicket.bind(this, marketplace, ticketPrice, initiator)}>Buy</button></td>
           </tr>
         );
       }));
@@ -73,18 +73,18 @@ class Purchase extends Component {
 
   render() {
     return (
-      <div class="container " class="col s12 m6 offset-m3 l4 offset-l4 z-depth-6 card-panel">
-        <h4 class="center">Purchase Tickets</h4>
-        <table id='requests' class="responsive-table striped" >
+      <div className="container " className="col s12 m6 offset-m3 l4 offset-l4 z-depth-6 card-panel">
+        <h4 className="center">Purchase Tickets</h4>
+        <table id='requests' className="responsive-table striped" >
           <thead>
             <tr>
-              <th key='name' class="center">Name</th>
-              <th key='price' class="center">Price(in FEST)</th>
-              <th key='left' class="center">Tickets Left</th>
-              <th key='purchase' class="center">Purchase</th>
+              <th key='name' className="center">Name</th>
+              <th key='price' className="center">Price(in FEST)</th>
+              <th key='left' className="center">Tickets Left</th>
+              <th key='purchase' className="center">Purchase</th>
             </tr>
           </thead>
-          <tbody class="striped highlight">
+          <tbody className="striped highlight">
             {this.state.festivals}
           </tbody>
         </table>

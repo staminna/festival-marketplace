@@ -109,26 +109,26 @@ class MyTickets extends Component {
 
   render() {
     return (
-      <div class="container center" >
-        <div class="row">
-          <div class="container ">
-            <div class="container ">
+      <div className="container center" >
+        <div className="row">
+          <div className="container ">
+            <div className="container ">
               <h5 style={{ padding: "30px 0px 0px 10px" }}>My Tickets</h5>
-              <form class="" onSubmit={this.onListForSale}>
+              <form className="" onSubmit={this.onListForSale}>
 
-                <label class="left">Festival</label>
+                <label className="left">Festival</label>
                 <select className="browser-default" name='fest' value={this.state.fest || undefined} onChange={this.onFestivalChangeHandler}>
                   <option value="" disabled >Select Festival</option>
                   {this.state.fests}
                 </select><br /><br />
 
-                <label class="left">Ticket Id</label>
+                <label className="left">Ticket Id</label>
                 <select className="browser-default" name='ticket' value={this.state.ticket || undefined} onChange={this.selectHandler}>
                   <option value="" disabled>Select Ticket</option>
                   {this.state.tickets}
                 </select><br /><br />
 
-                <label class="left">Sale Price</label><input id="price" placeholder="Sale Price" type="text" className="input-control" name="price" onChange={this.inputChangedHandler} /><br /><br />
+                <label className="left">Sale Price</label><input id="price" placeholder="Sale Price" type="text" className="input-control" name="price" onChange={this.inputChangedHandler} /><br /><br />
 
                 <button type="submit" className="custom-btn login-btn">List for Sale</button>
               </form>
