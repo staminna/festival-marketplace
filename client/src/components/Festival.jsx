@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import festivalFactory from '../proxies/FestivalFactory';
 import festToken from '../proxies/FestToken';
 import FestivalNFT from '../proxies/FestivalNFT';
-// import renderNotification from '../utils/notification-handler';
+import renderNotification from '../utils/notification-handler';
 
 let web3;
 

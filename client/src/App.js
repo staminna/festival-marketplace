@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import ReactNotification from 'react-notifications-component';
+import { ReactNotifications } from 'react-notifications-component';
 import Web3 from 'web3';
 import Festival from './components/Festival';
 import Purchase from './components/Purchase';
@@ -44,7 +44,7 @@ class App extends Component {
       <Router>
 
         <div >
-          <ReactNotification />
+          <ReactNotifications />
           <nav style={{ padding: '0px 30px 0px 30px' }}>
             <div className="nav-wrapper" >
               <a href="/buyTickets" className="brand-logo left">Festival Marketplace</a>
