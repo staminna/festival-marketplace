@@ -35,7 +35,7 @@ class Festival extends Component {
         supply
       ).send({ from: organiser, gas: 6700000 });
 
-      // renderNotification('success', 'Success', `Festival Created Successfully!`);
+      renderNotification('success', 'Success', `Festival Created Successfully!`);
 
       const nftInstance = await FestivalNFT(ntfAddress);
       const batches = Math.ceil(supply / 30);
@@ -57,7 +57,7 @@ class Festival extends Component {
       }
     } catch (err) {
       console.log('Error while creating new festival', err);
-      // renderNotification('danger', 'Error', `${err.message}`);
+      renderNotification('danger', 'Error', `${err.message}`);
     }
   }
 

@@ -1,8 +1,8 @@
-import { store } from 'react-notifications-component';
+import { Store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 
 const renderNotification = (type, title, message) => {
-  store.addNotification({
+  Store.addNotification({
     title: `${title}!`,
     message,
     type,
@@ -11,7 +11,7 @@ const renderNotification = (type, title, message) => {
     animationIn: ["animate__animated", "animate__fadeIn"],
     animationOut: ["animate__animated", "animate__fadeOut"],
     dismiss: {
-      duration: 3500,
+      duration: 6500,
       onScreen: true
     }
   });
